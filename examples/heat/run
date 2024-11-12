@@ -43,7 +43,8 @@ case $case in
     ext="$ext --report_every 5 --plot_every 5 --checkpoint_every 50"
     N=256 run $ext "$@"
     mkdir -p "$refdir"
-    cp -v $outdir/{train.*,args.json} "$refdir/"
+    cp -v $outdir/args.json "$refdir/"
+    cp -v $outdir/train.* "$refdir/"
     cp -v $outdir/checkpoint_000050.pickle "$refpath"
   ;;
   1)
